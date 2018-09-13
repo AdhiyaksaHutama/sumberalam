@@ -7,9 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,Image,} from 'react-native';
-import Judul from './component/Judul';
-import Cok from './component/Cok';
+import {Platform, StyleSheet, Text, View, Image, KeyboardAvoidingView} from 'react-native';
+import Login from './Login';
 
 
 const instructions = Platform.select({
@@ -23,38 +22,55 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-    
+    	<KeyboardAvoidingView behavior="padding" style={styles.container}>
+    	<View style={styles.logoContainer}>
+       
+    	 <Image
+    	 style={styles.logo}
+    	 source={require('/Kelas_11/KK4/android/ccnc1/logofb.png')}
+    	 />
 
-     <Judul title="Biodata"/>
-
-
-        <Text style={styles.welcome}>Halo wkw Ganteng!</Text>
-         <Image 
-        source={require('/Kelas_11/KK4/android/ccnc1/Bur.jpg')}
-        />
-        <Text style={styles.instructions}>Nama:Adhiyaksa Satrai Hutama, </Text>
-        <Text style={styles.instructions}>Kelas:XI RPL 3</Text>
-        <Text style={styles.instructions}>	No Absen:03</Text>
-      
-       </View>
+        <Text style={styles.title}>Facebosok</Text>
+        </View>
+        <View style={styles.formConatiner}>
+        <Login/>
+        </View>     
+        </KeyboardAvoidingView>
+        
     );
   }
-}
+} 
 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0976',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  logoContainer:{
+  	alignItems: 'center',
+  	flexGrow: 1,
+  	justifyContent: 'center'
+
   },
+
+  logo:{
+
+  	width:120,
+  	height:120
+  },
+
+  title:{
+  	fontSize:30,
+  	fontWeight:'bold',	
+  	color: '#FFF',
+  	marginTop: 10,
+  	width:160,
+  	textAlign: 'center',
+  	opacity: 0.9
+  },
+
   instructions: {
     textAlign: 'center',
     color: '#333333',

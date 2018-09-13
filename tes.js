@@ -17,6 +17,7 @@ export default class App extends Component<Props> {
       
 
       <View style={styles.container}>
+      <
         <Text style={styles.welcome}>Halo Ganteng!</Text>
          <Image 
         source={require('/Kelas_11/KK4/android/ccnc1/foto.jpg')}
